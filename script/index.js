@@ -20,13 +20,12 @@ function generateRecipe(data) {
 
     const recipeTitle = document.createElement('h1');
     recipeTitle.innerText = recipe.name;
-    recipeTitle.classList.add ('recipe-title');
+    recipeTitle.classList.add('recipe-title');
 
     const ingredientsHeading = document.createElement('h2');
     ingredientsHeading.innerText = 'Ingredients:';
 
     const ingredientsList = document.createElement('ol');
-
     recipe.ingredients.forEach(ingredient => {
         const ingredientItem = document.createElement('li');
         ingredientItem.innerText = ingredient;
@@ -37,18 +36,40 @@ function generateRecipe(data) {
     instructionsHeading.innerText = 'Instructions:';
 
     const instructionList = document.createElement('ol');
-
     recipe.instructions.forEach(instruction => {
         const instructionItem = document.createElement('li');
         instructionItem.innerText = instruction;
-
         instructionList.append(instructionItem);
     });
 
+    const recipeImage = document.createElement('img');
+    recipeImage.src = recipe.image;
+    recipeImage.alt = recipe.name;
+    recipeImage.classList.add('recipe-image');
+
+    const moreInfoBtn = document.createElement('button');
+    moreInfoBtn.innerText = 'More Info';
+    moreInfoBtn.classList.add('more-info-btn');
+
+    const moreInfoDiv = document.createElement('div');
+    moreInfoDiv.style.display = 'none';
+    moreInfoDiv.innerHTML = `
+        <p><strong>⏱️ Cooking Time:</strong> ${recipe.cookTimeMinutes} minutes</p>
+        <p><strong>⭐ Rating:</strong> ${recipe.rating}</p>
+        <p><strong>🫂 cuisine:<strong> ${recipe.cuisine};
+    `;
+
+    moreInfoBtn.addEventListener('click', () => {
+        moreInfoDiv.style.display = moreInfoDiv.style.display === 'none' ? 'block' : 'none';
+        
+    });
+
     recipeContainer.append(recipeTitle);
+    recipeContainer.append(recipeImage);
     recipeContainer.append(ingredientsHeading);
     recipeContainer.append(ingredientsList);
     recipeContainer.append(instructionsHeading);
     recipeContainer.append(instructionList);
-    
+    recipeContainer.append(moreInfoBtn);
+    recipeContainer.append(moreInfoDiv);
 }

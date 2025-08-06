@@ -1,72 +1,98 @@
-
-
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fffaf5;
     color: #333;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px 30px;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.container h1 {
     text-align: center;
-    color: #ff6347;
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #e65100;
+}
+
+#recipe-form {
+    text-align: center;
     margin-bottom: 30px;
 }
 
-#generate {
-    display: block;
-    width: 100%;
-    padding: 12px;
+#recipe-form button {
+    padding: 12px 24px;
     font-size: 16px;
-    background-color: #ff6347;
+    background-color: #f57c00;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-#generate:hover {
-    background-color: #e5533d;
+#recipe-form button:hover {
+    background-color: #e65100;
 }
 
 #displayRecipe {
-    margin-top: 30px;
+    padding: 20px;
 }
 
 .recipe-title {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #444;
+    font-size: 24px;
+    color: #d84315;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #6a1b9a;
+    margin-top: 20px;
 }
 
 ol {
     padding-left: 20px;
     margin-bottom: 20px;
 }
-
-button.more-info {
-    padding: 8px 16px;
-    font-size: 14px;
-    background-color: #008080;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
+.recipe-image {
+    display: block;
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-button.more-info:hover {
-    background-color: #006666;
+
+.more-info-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.more-info-btn:hover {
+    background-color: #0d47a1;
+}
+
+#displayRecipe div {
+    margin-top: 15px;
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.5;
 }
